@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { DisplayproductsComponent } from './displayproducts.component';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 describe('DisplayproductsComponent', () => {
   let component: DisplayproductsComponent;
   let fixture: ComponentFixture<DisplayproductsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DisplayproductsComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule, MatSnackBarModule],
+      declarations: [DisplayproductsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DisplayproductsComponent);
     component = fixture.componentInstance;
