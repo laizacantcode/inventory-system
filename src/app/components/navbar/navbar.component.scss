@@ -1,0 +1,17 @@
+@import url(../../../styles.scss);
+.navbar {
+    background-color: var(--primary-color-dark);
+    height: 50px;
+}
+
+img {
+    height: 30px;
+}
+button {
+    background-color: var(--primary-color-dark);
+    border: none;
+    border-radius: 5px;
+    color: var(--functional-color-white);
+    
+}
+
