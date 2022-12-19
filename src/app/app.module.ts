@@ -15,6 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CreateproductComponent } from './components/createproduct/createproduct.component';
 import { DisplayproductsComponent } from './components/displayproducts/displayproducts.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { ViewComponent } from './components/view/view.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
     CreateproductComponent,
     DisplayproductsComponent,
     DialogComponent,
+    ViewComponent,
   ],
   imports: [
     BrowserModule,

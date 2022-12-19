@@ -29,6 +29,16 @@ export class InventoryserviceService {
   create(newProduct: string) {
     return this.http
       .post('https://639843c6044fa481d696f181.mockapi.io/Products/', newProduct)
-      .subscribe((response) => this.snackbar.open('Product Added Successfully!', '', { duration: 2000 }));
+      .subscribe((response) =>
+        this.snackbar.open('Product Added Successfully!', '', {
+          duration: 2000,
+        })
+      );
+  }
+
+  getProductInfo(productID: number) {
+    return this.http.get<any>(
+      `https://639843c6044fa481d696f181.mockapi.io/Products/${productID}`
+    );
   }
 }
