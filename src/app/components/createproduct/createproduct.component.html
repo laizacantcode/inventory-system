@@ -1,0 +1,65 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="create-product-form">
+  <mat-card fxLayout="row" fxLayoutAlign="center" fxFlex.gt-xs="30" >
+    <mat-card-content>
+      <form
+        (ngSubmit)="create()"
+        [formGroup]="createProductForm"
+        fxLayout="column"
+        fxLayoutGap="5px"
+      >
+        <mat-form-field appearance="outline">
+          <mat-label>Product ID</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Product ID"
+            formControlName="productID"
+            id = "productID"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Product Name</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Product Name"
+            formControlName="productName"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Product Quantity</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Product Quantity"
+            formControlName="productQty"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Product Price</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Product Price"
+            formControlName="productPrice"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Product Description</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Product Description"
+            formControlName="productDescription"
+          />
+        </mat-form-field>
+
+        <button mat-raised-button>CREATE</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

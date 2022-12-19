@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+$font-family: 'Source Sans Pro', sans-serif;
+$font-size: 16px;
+$line-height: 20px;
+$primary-color: #717171;
+$secondary-color: #c9c9c9;
+$functional-color: #515151;
+
+.create-product-form {
+    height: 100%;
+    width: 100%;
+    
+}
+
+// mat-card {
+//     background-color: $functional-color;
+//     border-radius: 10px;
+//     button {
+//         background-color: $secondary-color ;
+//         color: $primary-color;
+//     }
+    
+// }
