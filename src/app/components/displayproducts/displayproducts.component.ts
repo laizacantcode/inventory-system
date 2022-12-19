@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DisplayproductsComponent implements OnInit {
   userlist!: Observable<Products[]>;
-  
+
   constructor(
     private service: InventoryserviceService,
     private http: HttpClient
@@ -22,9 +22,6 @@ export class DisplayproductsComponent implements OnInit {
   }
 
   delete(productID: number) {
-    this.http
-      .delete('https://639843c6044fa481d696f181.mockapi.io/Products/' + productID)
-      .subscribe((response) => console.log('Success!'));
-      console.log(productID)
+    this.service.delete(productID);
   }
 }

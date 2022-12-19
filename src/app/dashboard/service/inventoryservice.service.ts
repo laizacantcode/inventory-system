@@ -14,7 +14,11 @@ export class InventoryserviceService {
   fetchData(): Observable<Products[]> {
     return this.http.get<Products[]>('https://639843c6044fa481d696f181.mockapi.io/Products')
     .pipe(map(data => Object.values(data)));
+  }
   
+  delete(productID: number){
+    return this.http.delete<Products[]>('https://639843c6044fa481d696f181.mockapi.io/Products/' + productID)
+    .subscribe((response) => console.log('Success!'));
   }
   
 }
