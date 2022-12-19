@@ -4,9 +4,4 @@ export interface Products {
     productQty: number,
     productPrice: number,
     productDescription: string
-
-    // userId: number,
-    // id: number,
-    // title: string,
-    // body: string
 }

@@ -1,6 +1,6 @@
 <div class="display-products">
   <mat-list dense class="mat-elevation-z8">
-    <mat-list-item *ngFor="let user of userlist | async">
+    <mat-list-item *ngFor="let user of productList | async">
       <span matLine><strong>{{ user.id }}</strong></span>
       <span matLine>{{ user.productName }}</span>
       <button mat-icon-button><mat-icon class="view-button" matTooltip="VIEW">visibility</mat-icon></button>
