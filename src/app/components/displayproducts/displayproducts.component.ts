@@ -19,6 +19,7 @@ export class DisplayproductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.userlist = this.service.fetchData();
+    
   }
 
   delete(productID: number) {

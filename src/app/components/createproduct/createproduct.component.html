@@ -2,7 +2,7 @@
   <mat-card fxLayout="row" fxLayoutAlign="center" fxFlex.gt-xs="30" >
     <mat-card-content>
       <form
-        (ngSubmit)="create()"
+        (ngSubmit)="create($event)"
         [formGroup]="createProductForm"
         fxLayout="column"
         fxLayoutGap="5px"

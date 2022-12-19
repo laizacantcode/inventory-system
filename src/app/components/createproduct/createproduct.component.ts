@@ -4,7 +4,6 @@ import { InventoryserviceService } from '../../dashboard/service/inventoryservic
 import { HttpClient } from '@angular/common/http';
 import { Products } from 'src/app/dashboard/interface/products';
 
-
 @Component({
   selector: 'app-createproduct',
   templateUrl: './createproduct.component.html',
@@ -20,7 +19,9 @@ export class CreateproductComponent implements OnInit {
 
   ngOnInit(): void {
     this.createProductForm = new FormGroup({
-      productID: new FormControl(null, [Validators.required, Validators.minLength(10)]),
+      productID: new FormControl(null, [
+        Validators.required,
+      ]),
       productName: new FormControl(null, Validators.required),
       productQty: new FormControl(null, Validators.required),
       productPrice: new FormControl(null, Validators.required),
@@ -28,13 +29,8 @@ export class CreateproductComponent implements OnInit {
     });
   }
 
-  create() {
+  create(newProduct: string) {
     this.newProduct = this.createProductForm.value;
-    this.http
-      .post(
-        'https://639843c6044fa481d696f181.mockapi.io/Products',
-        this.newProduct
-      )
-      .subscribe((response) => console.log('Success!'));
+    this.service.create(newProduct);
   }
 }
