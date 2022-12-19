@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { InventoryserviceService } from 'src/app/dashboard/service/inventoryservice.service';
 import { Products } from 'src/app/dashboard/interface/products';
 
-
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -14,18 +13,18 @@ export class ViewComponent implements OnInit {
   productInfo!: Products;
   constructor(
     private route: ActivatedRoute,
-    private service: InventoryserviceService,
+    private service: InventoryserviceService
   ) {}
 
   ngOnInit(): void {
     this.productID = this.route.snapshot.params['id'];
-    this.service
-      .getProductInfo(this.productID)
-      .subscribe((res) => {
-        this.productInfo = res
-        console.log(this.productInfo)
-      }
-      );
-    
+
+    this.getProductInfo();
+  }
+
+  getProductInfo() {
+    this.service.getProductInfo(this.productID).subscribe((res) => {
+      this.productInfo = res;
+    });
   }
 }
