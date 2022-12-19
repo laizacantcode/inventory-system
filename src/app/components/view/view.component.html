@@ -1,7 +1,15 @@
-<div>
-  <p>{{ productInfo.id }}</p>
-  <p>{{ productInfo.productName }}</p>
-  <p>{{ productInfo.productQty }}</p>
-  <p>{{ productInfo.productPrice }}</p>
-  <p>{{ productInfo.productDescription }}</p>
+<div class="view-product-info">
+  <mat-card>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <span matLine>{{productInfo.id}}</span>
+          <span matLine>{{productInfo.productName}}</span>
+          <span matLine>{{productInfo.productQty}}</span>
+          <span matLine>{{productInfo.productPrice}}</span>
+          <span matLine>{{productInfo.productDescription}}</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
 </div>
