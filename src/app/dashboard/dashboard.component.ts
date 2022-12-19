@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../components/dialog/dialog.component';
-import { Products } from './interface/products';
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +8,7 @@ import { Products } from './interface/products';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private createProductDialog : MatDialog) {}
+  constructor() {}
 
   ngOnInit(): void {}
 

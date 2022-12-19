@@ -14,7 +14,7 @@ export class DisplayproductsComponent implements OnInit, OnDestroy {
 
   constructor(
     private service: InventoryserviceService,
-    private http: HttpClient
+    private http: HttpClient,
   ) {}
 
   ngOnInit(): void {

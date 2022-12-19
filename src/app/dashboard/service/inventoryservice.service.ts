@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root',
 })
 export class InventoryserviceService {
-  constructor(private http: HttpClient, private snackbar: MatSnackBar) {}
+  constructor(private http: HttpClient, private snackbar: MatSnackBar,) {}
 
   fetchData(): Observable<Products[]> {
     return this.http

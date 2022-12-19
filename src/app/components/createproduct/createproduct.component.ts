@@ -14,7 +14,7 @@ export class CreateproductComponent implements OnInit, OnDestroy {
   newProduct!: Products[];
   constructor(
     private service: InventoryserviceService,
-    private http: HttpClient
+    private http: HttpClient,
   ) {}
 
   ngOnInit(): void {
