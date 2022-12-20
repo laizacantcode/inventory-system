@@ -1,18 +1,18 @@
 <div class="display-products" fxFlex="100">
   <div layout-wrap fxFlex="50">
     <mat-list dense class="mat-elevation-z8">
-      <mat-list-item *ngFor="let user of productList | async">
+      <mat-list-item *ngFor="let product of productList | async">
         <span matLine
-          ><strong>{{ user.id }}</strong></span
+          ><strong>{{ product.id }}</strong></span
         >
-        <span matLine>{{ user.productName }}</span>
-        <button mat-icon-button [routerLink]="['/view', user.id]">
+        <span matLine>{{ product.productName }}</span>
+        <button mat-icon-button [routerLink]="['/view', product.id]">
           <mat-icon class="view-button" matTooltip="VIEW">visibility</mat-icon>
         </button>
-        <button mat-icon-button (click)="update()">
+        <button mat-icon-button (click)="update(product.id)">
           <mat-icon class="edit-button" matTooltip="EDIT">edit_square</mat-icon>
         </button>
-        <button mat-icon-button (click)="delete(user.id)">
+        <button mat-icon-button (click)="delete(product.id)">
           <mat-icon class="delete-button" matTooltip="DELETE"
             >disabled_by_default</mat-icon
           >
@@ -36,7 +36,7 @@
   >
     <mat-card>
       <mat-card-content>
-        <app-createproduct></app-createproduct>
+        <app-form></app-form>
       </mat-card-content>
     </mat-card>
   </div>

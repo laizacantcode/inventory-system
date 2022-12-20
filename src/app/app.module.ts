@@ -19,6 +19,7 @@ import { CreateproductComponent } from './components/createproduct/createproduct
 import { DisplayproductsComponent } from './components/displayproducts/displayproducts.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { ViewComponent } from './components/view/view.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ViewComponent } from './components/view/view.component';
     DisplayproductsComponent,
     DialogComponent,
     ViewComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,

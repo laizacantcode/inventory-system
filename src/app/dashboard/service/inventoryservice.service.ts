@@ -12,14 +12,14 @@ export class InventoryserviceService {
 
   fetchData(): Observable<Products[]> {
     return this.http
-      .get<Products[]>('https://639843c6044fa481d696f181.mockapi.io/Products')
+      .get<Products[]>('https://63a19bb5a543280f775bc426.mockapi.io/Products')
       .pipe(map((data) => Object.values(data)));
   }
 
   delete(productID: number) {
     return this.http
       .delete<Products[]>(
-        'https://639843c6044fa481d696f181.mockapi.io/Products/' + productID
+        'https://63a19bb5a543280f775bc426.mockapi.io/Products/' + productID
       )
       .subscribe((response) =>
         this.snackbar.open('Deleted Successfully!', '', { duration: 2000 })
@@ -28,7 +28,7 @@ export class InventoryserviceService {
 
   create(newProduct: string) {
     return this.http
-      .post('https://639843c6044fa481d696f181.mockapi.io/Products/', newProduct)
+      .post('https://63a19bb5a543280f775bc426.mockapi.io/Products/', newProduct)
       .subscribe((response) =>
         this.snackbar.open('Product Added Successfully!', '', {
           duration: 2000,
@@ -38,7 +38,7 @@ export class InventoryserviceService {
 
   getProductInfo(productID: number) {
     return this.http.get<any>(
-      `https://639843c6044fa481d696f181.mockapi.io/Products/${productID}`
+      `https://63a19bb5a543280f775bc426.mockapi.io/Products/${productID}`
     );
   }
 }
