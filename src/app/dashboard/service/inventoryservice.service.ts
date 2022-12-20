@@ -8,6 +8,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root',
 })
 export class InventoryserviceService {
+  
+
   constructor(private http: HttpClient, private snackbar: MatSnackBar,) {}
 
   fetchData(): Observable<Products[]> {
@@ -26,9 +28,9 @@ export class InventoryserviceService {
       );
   }
 
-  create(newProduct: string) {
+  create(newProduct: Products) {
     return this.http
-      .post('https://63a19bb5a543280f775bc426.mockapi.io/Products/', newProduct)
+      .post<Products>('https://63a19bb5a543280f775bc426.mockapi.io/Products', newProduct )
       .subscribe((response) =>
         this.snackbar.open('Product Added Successfully!', '', {
           duration: 2000,

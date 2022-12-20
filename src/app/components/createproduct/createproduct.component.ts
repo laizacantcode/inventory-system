@@ -11,7 +11,7 @@ import { Products } from 'src/app/dashboard/interface/products';
 })
 export class CreateproductComponent implements OnInit {
   createProductForm!: FormGroup;
-  newProduct!: Products[];
+  // newProduct!: Products[];
   
   constructor(
     private service: InventoryserviceService,
@@ -28,8 +28,9 @@ export class CreateproductComponent implements OnInit {
     });
   }
 
-  create(newProduct: string) {
-    this.newProduct = this.createProductForm.value;
-    this.http.post('https://63a19bb5a543280f775bc426.mockapi.io/Products', this.newProduct).subscribe((res) => console.log(res))
+  create(newProduct: Products) {
+    newProduct = this.createProductForm.value;
+    // this.http.post('https://63a19bb5a543280f775bc426.mockapi.io/Products', newProduct).subscribe((res) => console.log(res))
+    this.service.create(newProduct)
   }
 }
