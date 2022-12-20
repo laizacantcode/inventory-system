@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { InventoryserviceService } from '../../dashboard/service/inventoryservice.service';
 import { HttpClient } from '@angular/common/http';
@@ -9,12 +9,12 @@ import { Products } from 'src/app/dashboard/interface/products';
   templateUrl: './createproduct.component.html',
   styleUrls: ['./createproduct.component.scss'],
 })
-export class CreateproductComponent implements OnInit, OnDestroy {
+export class CreateproductComponent implements OnInit {
   createProductForm!: FormGroup;
   newProduct!: Products[];
   constructor(
     private service: InventoryserviceService,
-    private http: HttpClient,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -30,8 +30,5 @@ export class CreateproductComponent implements OnInit, OnDestroy {
   create(newProduct: string) {
     this.newProduct = this.createProductForm.value;
     this.service.create(newProduct);
-  }
-  ngOnDestroy(): void {
-    console.log('destroying child!');
   }
 }

@@ -1,21 +1,18 @@
-@import url(../../app.component.scss);
-
 .display-products {
-    height: 100%;
-    width: 100;
-    border-radius: 1px solid black;
+  height: 100%;
+  width: 100;
+  border-radius: 1px solid black;
 }
 mat-list {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
 }
 .delete-button {
-    color: var(--secondary-color-red);
+  color: var(--secondary-color-red);
 }
 .view-button {
-    color: var(--functional-color-grey3)
+  color: var(--functional-color-grey3);
 }
 .edit-button {
-   
-    color: var(--secondary-color-cyanBlue);
+  color: var(--secondary-color-cyanBlue);
 }

@@ -17,8 +17,7 @@ export class ViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.productID = this.route.snapshot.params['id'];
-
+    this.productID = this.route.snapshot.params['id'][0];
     this.getProductInfo();
   }
 
