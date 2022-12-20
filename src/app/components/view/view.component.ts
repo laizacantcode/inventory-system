@@ -16,8 +16,8 @@ export class ViewComponent implements OnInit {
     private service: InventoryserviceService
   ) {}
 
-  ngOnInit(): void {
-    this.productID = this.route.snapshot.params['id'][0];
+  ngOnInit(): void {    
+    this.productID = this.route.snapshot.params['id'];
     this.getProductInfo();
   }
 
