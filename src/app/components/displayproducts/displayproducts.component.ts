@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DisplayproductsComponent implements OnInit {
   productList!: Observable<Products[]>;
-
+  openTemplate = false;
   constructor(
     private service: InventoryserviceService,
     private http: HttpClient,
@@ -23,5 +23,9 @@ export class DisplayproductsComponent implements OnInit {
 
   delete(productID: number) {
     this.service.delete(productID);
+  }
+
+  update() {
+    this.openTemplate = true;
   }
 }
