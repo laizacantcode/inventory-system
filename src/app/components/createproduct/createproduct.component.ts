@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit} from '@angular/core';
+import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 import { InventoryserviceService } from '../../dashboard/service/inventoryservice.service';
 import { HttpClient } from '@angular/common/http';
 import { Products } from 'src/app/dashboard/interface/products';
@@ -9,9 +9,10 @@ import { Products } from 'src/app/dashboard/interface/products';
   templateUrl: './createproduct.component.html',
   styleUrls: ['./createproduct.component.scss'],
 })
-export class CreateproductComponent implements OnInit {
+export class CreateproductComponent implements OnInit{
+
   createProductForm!: FormGroup;
-  // newProduct!: Products[];
+  
 
   constructor(
     private service: InventoryserviceService,
@@ -19,17 +20,20 @@ export class CreateproductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createProductForm = new FormGroup({
+      this.createProductForm = new FormGroup({
       productID: new FormControl(null, [Validators.required]),
       productName: new FormControl(null, Validators.required),
       productQty: new FormControl(null, Validators.required),
       productPrice: new FormControl(null, Validators.required),
       productDescription: new FormControl(null, Validators.required),
     });
+
   }
 
-  create(newProduct: Products) {
+  create(newProduct: Products, productForm: FormGroupDirective) {
     newProduct = this.createProductForm.value;
-    this.service.create(newProduct);
+    this.service.create(newProduct)
+    productForm.resetForm();
   }
+    
 }

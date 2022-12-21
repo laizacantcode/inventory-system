@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Products } from '../interface/products';
 import { map, Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormGroupDirective } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -33,9 +34,10 @@ export class InventoryserviceService {
       .post<Products>('https://63a19bb5a543280f775bc426.mockapi.io/Products', newProduct )
       .subscribe((response) =>
         this.snackbar.open('Product Added Successfully!', '', {
-          duration: 2000,
+        duration: 2000,
         })
       );
+      
   }
 
   getProductInfo(productID: number) {
