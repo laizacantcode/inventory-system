@@ -1,5 +1,5 @@
-<div class="display-products" fxFlex="100">
-  <div layout-wrap fxFlex="50">
+<div class="display-products">
+  <div layout-wrap fxFlex="100">
     <mat-list dense class="mat-elevation-z8">
       <mat-list-item *ngFor="let product of productList | async">
         <span matLine
@@ -27,17 +27,4 @@
       </mat-paginator>
     </mat-list>
   </div>
-
-  <!-- <div
-    *ngIf="openTemplate === true"
-    fxLayout="row"
-    fxLayoutAlign="center center"
-    fxFlex="50"
-  >
-    <mat-card>
-      <mat-card-content>
-        <app-form></app-form>
-      </mat-card-content>
-    </mat-card>
-  </div> -->
 </div>

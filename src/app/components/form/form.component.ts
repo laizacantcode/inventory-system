@@ -26,7 +26,6 @@ export class FormComponent implements OnInit, DoCheck {
  
   ngDoCheck(): void {
     this.createProductForm.patchValue(this.currentProductInfo)
-    
   }
 
   submitted() {

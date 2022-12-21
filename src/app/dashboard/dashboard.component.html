@@ -1,5 +1,7 @@
-<div class="dashboard" layout-wrap>
-  <app-navbar></app-navbar>
-  <app-displayproducts (currentData) = "editProducts($event)"></app-displayproducts>
-  <app-form [currentProductInfo] = "currentProductInfo"></app-form>
+<div>
+  <div fxLayout='row wrap' fxLayoutAlign="center center">
+  <app-navbar fxFlex="100"></app-navbar>
+  <app-displayproducts (currentData) = "editProducts($event)" fxFlex="50" ></app-displayproducts>
+  <app-form [currentProductInfo] = "currentProductInfo" fxFlex="50"></app-form>
+  </div>
 </div>
