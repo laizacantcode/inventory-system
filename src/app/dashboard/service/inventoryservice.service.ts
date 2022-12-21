@@ -43,4 +43,12 @@ export class InventoryserviceService {
       `https://63a19bb5a543280f775bc426.mockapi.io/Products/${productID}`
     );
   }
+
+  update(productID: number, updatedProductInfo: Products) {
+    return this.http.put('https://63a19bb5a543280f775bc426.mockapi.io/Products/' + productID,  updatedProductInfo)
+    .subscribe((response) => this.snackbar.open('Product Added Successfully!', '', {
+      duration: 2000,
+    })
+    );
+  }
 }
