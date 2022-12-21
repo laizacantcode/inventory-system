@@ -38,7 +38,7 @@ export class DisplayproductsComponent implements OnInit, OnDestroy {
     this.service
       .getProductInfo(productID)
       .subscribe((res: Products) => this.currentData.emit(res));
-    console.log(this.currentData);
+      
   }
 
   ngOnDestroy(): void {}

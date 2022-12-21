@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input } from '@angular/core';
+
+
 
 
 
@@ -8,12 +10,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  currentProductInfo!: any;
+  
   constructor() {}
 
   ngOnInit(): void {}
 
   editProducts(currentData: Object) {
-    console.log(currentData)
+    this.currentProductInfo = currentData
+    
   }
   
 }

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Products } from 'src/app/dashboard/interface/products';
+
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, DoCheck {
   createProductForm!: FormGroup;
-  formval!: Products;
+  @Input() currentProductInfo! : any;
 
   constructor() {}
 
@@ -21,9 +21,15 @@ export class FormComponent implements OnInit {
       productPrice: new FormControl(null, Validators.required),
       productDescription: new FormControl(null, Validators.required),
     });
+    
+  }
+ 
+  ngDoCheck(): void {
+    this.createProductForm.patchValue(this.currentProductInfo)
+    
   }
 
   submitted() {
-    this.formval = this.createProductForm.value;
+    
   }
 }
