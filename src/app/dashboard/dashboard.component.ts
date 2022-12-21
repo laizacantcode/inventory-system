@@ -12,6 +12,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  fetchData() {}
+  editProducts(currentData: Object) {
+    console.log(currentData)
+  }
   
 }

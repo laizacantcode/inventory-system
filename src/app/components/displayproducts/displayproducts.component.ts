@@ -1,9 +1,15 @@
-import { Component, OnInit, Output, EventEmitter, Input, OnDestroy} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  OnDestroy,
+} from '@angular/core';
 import { InventoryserviceService } from '../../dashboard/service/inventoryservice.service';
 import { Products } from '../../dashboard/interface/products';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-displayproducts',
@@ -11,15 +17,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./displayproducts.component.scss'],
 })
 export class DisplayproductsComponent implements OnInit, OnDestroy {
-  
   productList!: Observable<Products[]>;
   openTemplate = false;
-  updateData!: Products;
-
+  @Output() currentData = new EventEmitter<Products>();
 
   constructor(
     private service: InventoryserviceService,
-    private http: HttpClient,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -30,13 +34,12 @@ export class DisplayproductsComponent implements OnInit, OnDestroy {
     this.service.delete(productID);
   }
 
-  update(productID: number) {
-    this.openTemplate = true;
-    this.service.getProductInfo(productID).subscribe((res) => {this.updateData=res})
-  } 
-  
-   
-  ngOnDestroy(): void {
-    
+  editProductInfo(productID: number) {
+    this.service
+      .getProductInfo(productID)
+      .subscribe((res: Products) => this.currentData.emit(res));
+    console.log(this.currentData);
   }
- }
+
+  ngOnDestroy(): void {}
+}

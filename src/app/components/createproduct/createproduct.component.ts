@@ -12,14 +12,14 @@ import { Products } from 'src/app/dashboard/interface/products';
 export class CreateproductComponent implements OnInit {
   createProductForm!: FormGroup;
   // newProduct!: Products[];
-  
+
   constructor(
     private service: InventoryserviceService,
     private http: HttpClient
   ) {}
 
   ngOnInit(): void {
-      this.createProductForm = new FormGroup({
+    this.createProductForm = new FormGroup({
       productID: new FormControl(null, [Validators.required]),
       productName: new FormControl(null, Validators.required),
       productQty: new FormControl(null, Validators.required),
@@ -30,7 +30,6 @@ export class CreateproductComponent implements OnInit {
 
   create(newProduct: Products) {
     newProduct = this.createProductForm.value;
-    // this.http.post('https://63a19bb5a543280f775bc426.mockapi.io/Products', newProduct).subscribe((res) => console.log(res))
-    this.service.create(newProduct)
+    this.service.create(newProduct);
   }
 }

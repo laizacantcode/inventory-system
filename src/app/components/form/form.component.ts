@@ -1,7 +1,6 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Products } from 'src/app/dashboard/interface/products';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -11,9 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 export class FormComponent implements OnInit {
   createProductForm!: FormGroup;
   formval!: Products;
-  @Input() updateData!: Products;
-  
-  
+
   constructor() {}
 
   ngOnInit(): void {
@@ -23,18 +20,10 @@ export class FormComponent implements OnInit {
       productQty: new FormControl(null, Validators.required),
       productPrice: new FormControl(null, Validators.required),
       productDescription: new FormControl(null, Validators.required),
-
     });
-    console.log(this.updateData)
-  }
-
-  productUpdate(data: Object) {
-    this.createProductForm.patchValue(this.updateData);
   }
 
   submitted() {
     this.formval = this.createProductForm.value;
   }
-
-  
 }
